@@ -1,5 +1,5 @@
 import os,sys,shutil  #only for security
-print("Welcome to Windows Font Changer\nDo you want to-\n1. Change font: enter 'c'\n2. Reset original font: enter 'r'")
+print("Welcome to Windows Font Changer\nDo you want to-\n1. Change font: enter 'c'\n2. Reset original font: enter 'r'\n3.Get a list of available fonts:enter 'l")
 e=str(input(""))
 if e=="c":
     font=str(input("Enter font name:"))
@@ -30,3 +30,14 @@ if e=="c":
 if e=="r":
     os.system("h.reg")
     print("If you gave access to the computer, than your font has been resetted.")
+if e=="l":
+    dir="C:\\Windows\\Fonts"
+    from os import listdir
+    for x in listdir(dir):
+        if x.endswith('.ttf'):
+            print(x.strip('.ttf'))
+        if x.endswith('.ttc'):
+            print(x.strip('.ttc'))
+        if x.endswith('.fon'):
+            print(x.strip('.fon'))        
+
